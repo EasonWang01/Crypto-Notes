@@ -1,3 +1,20 @@
-# First Chapter
+# RSA
 
-GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.
+
+
+RSA密鑰一般是1024位或2048位，位指的是二進位數
+
+第一步:隨便找兩個質數a b
+
+
+
+第二步:計算φ\(axb\)
+
+
+
+第三步: 隨便找一個1&lt; e &lt; φ\(n\)的數字，且e与φ\(n\)互質 
+
+
+
+
+
