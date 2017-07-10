@@ -4,7 +4,7 @@ RSA密鑰一般是1024位或2048位，位指的是二進位數
 
 第一步:隨便找兩個質數a b
 
-> 質數表http://www.baike.com/wiki/%E8%B4%A8%E6%95%B0%E8%A1%A8
+> 質數表[http://www.baike.com/wiki/质数表](http://www.baike.com/wiki/质数表)
 
 ```
 這裡假設a,b是23和29
@@ -89,9 +89,37 @@ function te() {
 >
 > 建議將密文以單字為單位轉為ascII然後個別存入陣列轉換
 
-
-
 完整範例
+
+1.把passphrase的每個單字對應到ascII轉為數字，然後再用數字去找質數表中之相對index的質數值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+其他知識
+
+```
+DER (Distinguished Encoding Rules)：
+二進位內容，屬於 ASN.1 制定的編碼之一
+
+PEM (Privacy-enhanced Electronic Mail)：
+為 DER 格式經過 BASE64 編碼後，通常會有 ----- BEGIN XXX ----- / ----- END XXX ----- 之類的東西包夾起來。由於 PEM 格式採用了 BASE64 編碼，文字都被編成常用的英文數字符號，方便於網路上傳送及複製 (如即時通訊、電子郵件等)。OpenSSL 預設產生的檔案都是 PEM 格式
+```
 
 
 
