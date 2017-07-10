@@ -53,10 +53,12 @@ function te() {
 這時加密的公鑰匙為\(667, 19\) 所以加密方式為
 
 ```
-(6500660067 ** 19) % 667
+(6500660067 的 19 次方) % 667
 ```
 
-得到數字為148
+> 這裡因為數字是Big int所以算的時候不可直接用...\*\*...% ...，需要用相關Big INT模組不然會產生計算錯誤
+
+得到數字為260
 
 #### \# 解密
 
@@ -70,13 +72,20 @@ function te() {
 
 這裡牽涉到BIg integer時常會出現infinity
 
+需要使用Big-integer module
 
+    var bigInt = require("big-integer");
+    let msg = 27;
+    let a = bigInt(msg).pow(19).mod(667);
+    let b = bigInt(a).pow(227).mod(667);
 
-所以使用公式
+    console.log(`輸入密文為:${msg}`)
+    console.log(`密鑰為(667, 227)`)
+    console.log(`輸入密文為:${b}`)
 
-```
-a ^ b % n = ( a % n ) ^ b % n;
-```
+> 上面如果msg輸入數字過大也會產生解密後和輸入數字不同之情況
+>
+> 建議將密文以單字為單位轉為ascII然後個別存入陣列轉換
 
 
 
