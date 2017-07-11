@@ -74,7 +74,7 @@ function te() {
 
 這裡牽涉到BIg integer時常會出現infinity
 
-需要使用Big-integer module
+需要使用Big-integer module或是參考費馬小定理&gt;https://zh.wikipedia.org/wiki/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86
 
     var bigInt = require("big-integer");
     let msg = 27;
@@ -88,14 +88,6 @@ function te() {
 > 上面如果msg輸入數字過大也會產生解密後和輸入數字不同之情況
 >
 > 建議將密文以單字為單位轉為ascII然後個別存入陣列轉換
-
-完整範例
-
-1.把passphrase的每個單字對應到ascII轉為數字，然後再用數字去找質數表中與其最相近的質數值
-
-
-
-
 
 
 
