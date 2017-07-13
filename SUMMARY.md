@@ -4,5 +4,6 @@
   * [數論相關](shu-lun-xiang-guan.md)
 * [RSA](chapter1.md)
 * [SHA256](sha256.md)
+* [RIPEMD](ripemd.md)
 * [browser crypto](browser-crypto.md)
 
