@@ -12,9 +12,9 @@
 
 [https://developer.mozilla.org/en-US/docs/Web/API/Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Crypto)
 
+EX:  sha256 \(from MDN\) 
 
-
-EX:\(from MDN\)
+> https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
 
 ```js
 function sha256(str) {
