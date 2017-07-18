@@ -4,11 +4,32 @@
 
 # 步驟1:
 
-先定義公式:
+#### \# 先定義公式:
 
 ![](/assets/45.png)
 
 ![](/assets/5.png)
+
+#### \# 然後加上hash時會用到的constant
+
+#### 1.
+
+![](/assets/258.png)
+
+```js
+var hl = [0x00000000, 0x5a827999, 0x6ed9eba1, 0x8f1bbcdc, 0xa953fd4e]
+var hr = [0x50a28be6, 0x5c4dd124, 0x6d703ef3, 0x7a6d76e9, 0x00000000]
+```
+
+> Ex:  對照上圖最右側公式     \(2\*\*30 \* \(Math.sqrt\(2\)\)\).toString\(16\)       回傳    "5a827999.fcef34"
+
+#### 2.
+
+
+
+
+
+
 
 看完上面可能會有點模糊，所以我們直接來看整個hash過程的pseudo-code
 
@@ -75,11 +96,7 @@ for (var i = 0; i < 80; i += 1) {
 }
 ```
 
-
-
 最後，一開始的把constant每個數值的state更新然後串接起來
-
-
 
 ```js
   let t = (this._b + cl + dr) | 0
@@ -88,7 +105,7 @@ for (var i = 0; i < 80; i += 1) {
   this._d = (this._e + al + br) | 0
   this._e = (this._a + bl + cr) | 0
   this._a = t
-  
+
   let buffer = new Buffer(20)
   buffer.writeInt32LE(this._a, 0)
   buffer.writeInt32LE(this._b, 4)
@@ -96,7 +113,6 @@ for (var i = 0; i < 80; i += 1) {
   buffer.writeInt32LE(this._d, 12)
   buffer.writeInt32LE(this._e, 16)
   return buffer
-  
 ```
 
 
