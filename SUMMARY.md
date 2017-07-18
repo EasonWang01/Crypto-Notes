@@ -5,5 +5,6 @@
 * [RSA](chapter1.md)
 * [SHA256](sha256.md)
 * [RIPEMD](ripemd.md)
+* [ECDSA](ecdsa.md)
 * [Crypto module](browser-crypto.md)
 
