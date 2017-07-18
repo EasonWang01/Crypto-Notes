@@ -1,6 +1,10 @@
-# \#[SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
+# \# Argon2
 
-[https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
+https://github.com/ranisalt/node-argon2
+
+# \# Bcrypt
+
+https://github.com/kelektiv/node.bcrypt.js
 
 # \#[sjcl](https://github.com/bitwiseshiftleft/sjcl/tree/3668e639bc78e910815f501d55458e968845edc2) \(By standford\)
 
