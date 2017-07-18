@@ -10,8 +10,6 @@
 
 ![](/assets/5.png)
 
-
-
 看完上面可能會有點模糊，所以我們直接來看整個hash過程的pseudo-code
 
 ![](/assets/548.png)
@@ -75,6 +73,30 @@ for (var i = 0; i < 80; i += 1) {
     cr = br
     br = tr
 }
+```
+
+
+
+最後，一開始的把constant每個數值的state更新然後串接起來
+
+
+
+```js
+  let t = (this._b + cl + dr) | 0
+  this._b = (this._c + dl + er) | 0
+  this._c = (this._d + el + ar) | 0
+  this._d = (this._e + al + br) | 0
+  this._e = (this._a + bl + cr) | 0
+  this._a = t
+  
+  let buffer = new Buffer(20)
+  buffer.writeInt32LE(this._a, 0)
+  buffer.writeInt32LE(this._b, 4)
+  buffer.writeInt32LE(this._c, 8)
+  buffer.writeInt32LE(this._d, 12)
+  buffer.writeInt32LE(this._e, 16)
+  return buffer
+  
 ```
 
 
