@@ -36,5 +36,7 @@ function fn5 (a, b, c, d, e, m, k, s) {
 }
 ```
 
-看完上面可能會有點模糊，所以我們直接來看整個
+看完上面可能會有點模糊，所以我們直接來看整個hash過程的pseudo-code
+
+![](/assets/548.png)
 
