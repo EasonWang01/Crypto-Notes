@@ -69,7 +69,15 @@ var sr = [
 ]
 ```
 
-看完上面這些constant可能會有點模糊，不知道他們是用來做什麼的，所以我們直接來看整個hash過程的pseudo-code
+### 最後一個
+
+![](/assets/asdf.png)
+
+### 
+
+### \# 看完上面這些constant可能會有點模糊，不知道他們是用來做什麼的
+
+### 所以我們直接來看整個hash過程的pseudo-code
 
 ![](/assets/548.png)
 
