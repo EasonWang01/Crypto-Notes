@@ -12,40 +12,24 @@
 
 [https://developer.mozilla.org/en-US/docs/Web/API/Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Crypto)
 
-EX:  sha256 \(from MDN\) 
+EX:  sha256 \(from MDN\)
 
-> https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
+> [https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest)
 
 ```js
-function sha256(str) {
-  // We transform the string into an arraybuffer.
-  var buffer = new TextEncoder("utf-8").encode(str);
-  return crypto.subtle.digest("SHA-256", buffer).then(function (hash) {
-    return hex(hash);
-  });
+async function sha256(message) {
+    const msgBuffer = new TextEncoder('utf-8').encode(message);                     // encode as UTF-8
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);            // hash the message
+    const hashArray = Array.from(new Uint8Array(hashBuffer));                       // convert ArrayBuffer to Array
+    const hashHex = hashArray.map(b => ('00' + b.toString(16)).slice(-2)).join(''); // convert bytes to hex string
+    return hashHex;
 }
 
-function hex(buffer) {
-  var hexCodes = [];
-  var view = new DataView(buffer);
-  for (var i = 0; i < view.byteLength; i += 4) {
-    // Using getUint32 reduces the number of iterations needed (we process 4 bytes each time)
-    var value = view.getUint32(i)
-    // toString(16) will give the hex representation of the number without padding
-    var stringValue = value.toString(16)
-    // We use concatenation and slice for padding
-    var padding = '00000000'
-    var paddedValue = (padding + stringValue).slice(-padding.length)
-    hexCodes.push(paddedValue);
-  }
+sha256('abc').then(hash => console.log(hash));
 
-  // Join all the hex strings into one
-  return hexCodes.join("");
-}
-
-sha256("abc").then(function(digest) {
-  console.log(digest);
-});
+(async function() {
+    const hash = await sha256('abc');
+}());
 ```
 
 
