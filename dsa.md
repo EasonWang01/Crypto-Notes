@@ -23,7 +23,7 @@ DSA 只能用於數字簽名，而無法用於加密（某些擴展可以支持�
 
 
 
-
+\#
 
 簽章過程:\(使用Openssl\)
 
@@ -33,31 +33,27 @@ DSA 只能用於數字簽名，而無法用於加密（某些擴展可以支持�
 openssl gendsa
 ```
 
-
-
 1. 產生一個1024bits的參數檔案
 
 ```
-openssl dsaparam -out dsa_param.pem 1024 
+openssl dsaparam -out dsa_param.pem 1024
 ```
 
 ![](/assets/dsa01.png)
 
 2.從剛才的參數檔案產生一個private key 並且用AES-128之password protect  也可用aes-192或aes-256
 
-
-
 ```
-openssl gendsa -out dsa_privatekey.pem -aes128 dsa_param.pem 
+openssl gendsa -out dsa_privatekey.pem -aes128 dsa_param.pem
 ```
 
+![](/assets/dsa02.png)
 
-
-
-
-
-
-
+> PS:unable to write ''random state" 可參考此
+>
+> https://stackoverflow.com/questions/94445/using-openssl-what-does-unable-to-write-random-state-mean    
+>
+> 但其不影響
 
 
 
