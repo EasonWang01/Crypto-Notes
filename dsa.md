@@ -69,7 +69,7 @@ vim document.txt
 openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt
 ```
 
-5.驗證
+5.最後用公鑰驗證
 
 ```
 openssl dgst -dss1 -verify dsa_publickey.pem -signature document.sig document.txt
