@@ -54,21 +54,19 @@ openssl gendsa -out dsa_privatekey.pem -aes128 dsa_param.pem
 3.接著再從私鑰產生一把公鑰
 
 ```
-openssl dsa -in dsa_privatekey.pem -pubout -out dsa_publickey.pem 
+openssl dsa -in dsa_privatekey.pem -pubout -out dsa_publickey.pem
 ```
-
-
 
 4.之後我們新增一個我們要用來簽章的文件 ，並且在裡面寫一點字
 
 ```
-vim document.txt 
+vim document.txt
 ```
 
 然後用私鑰對文件簽章產生一個sig
 
 ```
-openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt 
+openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt
 ```
 
 5.驗證
@@ -77,7 +75,5 @@ openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt
 openssl dgst -dss1 -verify dsa_publickey.pem -signature document.sig document.txt
 ```
 
-
-
-
+![](/assets/dsa04.png)
 
