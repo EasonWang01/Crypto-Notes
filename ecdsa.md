@@ -6,7 +6,7 @@
 
 有三個類似名詞為**ECC、ECDH、ECDSA，第一個是**Elliptic Curve Cryptography的縮寫，而後面兩個都是基於ECC的加密演算法
 
-
+而ECDSA也可視為ECC+DSA\(Digital Signature Algorithm\)
 
 
 
