@@ -1,6 +1,6 @@
 # Digital Signature Algorithm {#firstHeading}
 
-先瞭解的概念
+# \# 先瞭解的概念
 
 1.
 
@@ -23,9 +23,7 @@ DSA 只能用於數字簽名，而無法用於加密（某些擴展可以支持�
 
 
 
-\#
-
-簽章過程:\(使用Openssl\)
+# \#簽章過程:\(使用Openssl\)
 
 > 查看相關指令
 
@@ -51,9 +49,11 @@ openssl gendsa -out dsa_privatekey.pem -aes128 dsa_param.pem
 
 > PS:unable to write ''random state" 可參考此
 >
-> https://stackoverflow.com/questions/94445/using-openssl-what-does-unable-to-write-random-state-mean    
+> [https://stackoverflow.com/questions/94445/using-openssl-what-does-unable-to-write-random-state-mean](https://stackoverflow.com/questions/94445/using-openssl-what-does-unable-to-write-random-state-mean)
 >
 > 但其不影響
+
+3.接著再從私鑰產生一把公鑰
 
 
 
