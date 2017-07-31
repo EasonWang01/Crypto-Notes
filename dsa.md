@@ -21,8 +21,6 @@ RSA 與 DSA 都是非對稱加密算法。其中RSA的安全性是基於極其�
 DSA 只能用於數字簽名，而無法用於加密（某些擴展可以支持加密）；RSA 即可作為數字簽名，也可以作為加密算法
 ```
 
-
-
 # \#簽章過程:\(使用Openssl\)
 
 > 查看相關指令
@@ -54,6 +52,32 @@ openssl gendsa -out dsa_privatekey.pem -aes128 dsa_param.pem
 > 但其不影響
 
 3.接著再從私鑰產生一把公鑰
+
+```
+openssl dsa -in dsa_privatekey.pem -pubout -out dsa_publickey.pem 
+```
+
+
+
+4.之後我們新增一個我們要用來簽章的文件 ，並且在裡面寫一點字
+
+```
+vim document.txt 
+```
+
+然後用私鑰對文件簽章產生一個sig
+
+```
+openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt 
+```
+
+5.驗證
+
+```
+openssl dgst -dss1 -verify dsa_publickey.pem -signature document.sig document.txt
+```
+
+
 
 
 
