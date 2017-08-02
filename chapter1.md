@@ -10,7 +10,7 @@ RSA密鑰一般是1024位或2048位，位指的是二進位數
 這裡假設a,b是23和29
 ```
 
-第二步:計算φ\(axb\)
+第二步:計算φ\(axb\)      φ\(x\)的意思為小於x的所有質數的數量
 
 ```
 23x29 = 667  
@@ -74,7 +74,7 @@ function te() {
 
 這裡牽涉到BIg integer時常會出現infinity
 
-需要使用Big-integer module或是參考費馬小定理&gt;https://zh.wikipedia.org/wiki/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86
+需要使用Big-integer module或是參考費馬小定理&gt;[https://zh.wikipedia.org/wiki/费马小定理](https://zh.wikipedia.org/wiki/费马小定理)
 
     var bigInt = require("big-integer");
     let msg = 27;
@@ -88,8 +88,6 @@ function te() {
 > 上面如果msg輸入數字過大也會產生解密後和輸入數字不同之情況
 >
 > 建議將密文以單字為單位轉為ascII然後個別存入陣列轉換
-
-
 
 其他知識
 
