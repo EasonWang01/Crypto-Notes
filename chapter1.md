@@ -116,17 +116,23 @@ let decrypt = final.map(d => {
 console.log(decrypt)
 ```
 
-
-
 # 使用OpenSSL
 
-產生一個private key
+1.產生一個private key
 
 > 預設產生長度為 512 bit  在最後可加數字1024 or 4096 產生不同長度私鑰
 
 ```
  openssl genrsa -out private.pem
 ```
+
+2.產生PEM格式的公鑰
+
+```
+openssl rsa -in private.pem -out public.pem -outform PEM -pubout
+```
+
+
 
 
 
