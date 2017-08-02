@@ -116,7 +116,7 @@ let decrypt = final.map(d => {
 console.log(decrypt)
 ```
 
-# 使用OpenSSL
+# 使用OpenSSL之RSA加解密
 
 1.產生一個private key
 
@@ -162,13 +162,7 @@ cat decrypt.txt
 
 即可看到成功還原為原本檔案
 
-
-
-
-
------ 
-
-
+---
 
 其他知識
 
