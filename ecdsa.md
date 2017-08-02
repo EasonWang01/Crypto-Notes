@@ -52,11 +52,11 @@ var secret4 = ecdh4.computeSecret(publicKey3);
 console.log('Secret2: ', secret4.length, secret4.toString('hex'));
 ```
 
-結果如下
+結果如下:
+
+&gt; 以下倆倆為一組，因用A之ecdh與B之public key 算出之結果與用 B之ecdh 與A之public key 相同
 
 ![](/assets/4523.png)
-
-
 
 # ECDSA（The Elliptic Curve Digital Signature Algorithm）
 
