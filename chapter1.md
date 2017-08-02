@@ -148,8 +148,6 @@ openssl rsautl -encrypt -inkey public.pem -pubin -in test.txt -out encrypt.rsa
 
 > 如檔案大小過大會產生錯誤
 
-
-
 5.用私鑰解密檔案
 
 ```
@@ -163,6 +161,12 @@ cat decrypt.txt
 ```
 
 即可看到成功還原為原本檔案
+
+
+
+
+
+----- 
 
 
 
