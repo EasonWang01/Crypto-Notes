@@ -160,7 +160,7 @@ openssl rsautl -decrypt -inkey private.pem -in encrypt.rsa -out decrypt.txt
 cat decrypt.txt
 ```
 
-即可看到成功還原為原本檔案
+即可看到成功還原為原本檔案之檔案內容
 
 ---
 
