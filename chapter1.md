@@ -52,17 +52,11 @@ function te() {
 65,66,67
 ```
 
-
-
 而msg輸入數字過大也會產生解密後和輸入數字不同之情況
 
 > 建議將密文以單字為單位轉為ascII然後個別存入陣列轉換
 
-
-
 所以我們把ABC分為三個65,66,67分別加解密再組合起來
-
-
 
 1.先算字母A
 
@@ -77,8 +71,6 @@ function te() {
 > 不可用chrome devtool直接計算，結果會不同
 >
 > 建議可以用python的command，因其內建Bigint
-
-
 
 ```
 打開command輸入python
@@ -101,24 +93,28 @@ function te() {
 
 需要使用Big-integer module或是參考費馬小定理&gt;[https://zh.wikipedia.org/wiki/费马小定理](https://zh.wikipedia.org/wiki/费马小定理)
 
-
-
 > 最後得到剛才的65即完成
-
-
 
 以下為用js的big-integer模組，分別計算字母再連接的Function
 
+```
+var bigInt = require("big-integer");
+let msg = "ABC";
+let final = [];
 
+msg.split('').forEach(char => {     // 每個字母分為Array一個元素
+  let ascii = char.charCodeAt(0);  // 轉為ASCII
+  let a = bigInt(ascii).pow(19).mod(667);   // 用公鑰加密
+  let b = bigInt(a).pow(227).mod(667);    //// 用私鑰解密
+  final.push(b.toString());
+})
 
-    var bigInt = require("big-integer");
-    let msg = 27;
-    let a = bigInt(msg).pow(19).mod(667);
-    let b = bigInt(a).pow(227).mod(667);
+let decrypt = final.map(d => {
+  return String.fromCharCode(parseInt(d)); // 轉為string
+})
 
-    console.log(`輸入密文為:${msg}`)
-    console.log(`密鑰為(667, 227)`)
-    console.log(`輸入密文為:${b}`)
+console.log(decrypt)
+```
 
 其他知識
 
