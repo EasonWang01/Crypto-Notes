@@ -132,11 +132,15 @@ console.log(decrypt)
 openssl rsa -in private.pem -out public.pem -outform PEM -pubout
 ```
 
+3.產生一個稍後用來加密的檔案
 
+```
+vim test.txt
 
+然後檔案內容隨意輸入
+```
 
-
-
+4.用公鑰加密檔案
 
 
 
