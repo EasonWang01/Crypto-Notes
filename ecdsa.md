@@ -52,9 +52,11 @@ var secret4 = ecdh4.computeSecret(publicKey3);
 console.log('Secret2: ', secret4.length, secret4.toString('hex'));
 ```
 
+結果如下
+
+![](/assets/4523.png)
 
 
-# 
 
 # ECDSA（The Elliptic Curve Digital Signature Algorithm）
 
@@ -63,10 +65,4 @@ ECDSA也可視為ECC+DSA\(Digital Signature Algorithm\)
 視覺化網站:[https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html](https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html)
 
 常見用於:[TLS](https://tools.ietf.org/html/rfc4492)   [PGP](https://tools.ietf.org/html/rfc6637)  [SSH](https://tools.ietf.org/html/rfc5656) 和部分加密貨幣
-
-
-
-
-
-
 
