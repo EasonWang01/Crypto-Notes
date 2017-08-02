@@ -140,7 +140,29 @@ vim test.txt
 然後檔案內容隨意輸入
 ```
 
-4.用公鑰加密檔案
+4.用公鑰加密test.txt檔案，將會產生encrypt.rsa檔案
+
+```
+openssl rsautl -encrypt -inkey public.pem -pubin -in test.txt -out encrypt.rsa
+```
+
+> 如檔案大小過大會產生錯誤
+
+
+
+5.用私鑰解密檔案
+
+```
+openssl rsautl -decrypt -inkey private.pem -in encrypt.rsa -out decrypt.txt
+```
+
+6.最後查看解密後的檔案內容
+
+```
+cat decrypt.txt
+```
+
+即可看到成功還原為原本檔案
 
 
 
