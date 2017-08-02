@@ -60,8 +60,6 @@ console.log('Secret2: ', secret4.length, secret4.toString('hex'));
 
 ![](/assets/7458.png)
 
-
-
 ```
 小明與阿東 兩人協議好要使用 p=23以及 g=5.
 
@@ -77,10 +75,6 @@ B = (5 ** 15) % 23 = 19.
 (8 ** 15) % 23 = 2.
 ```
 
-
-
-
-
 # ECDSA（The Elliptic Curve Digital Signature Algorithm）
 
 ECDSA也可視為ECC+DSA\(Digital Signature Algorithm\)
@@ -88,4 +82,14 @@ ECDSA也可視為ECC+DSA\(Digital Signature Algorithm\)
 視覺化網站:[https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html](https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html)
 
 常見用於:[TLS](https://tools.ietf.org/html/rfc4492)   [PGP](https://tools.ietf.org/html/rfc6637)  [SSH](https://tools.ietf.org/html/rfc5656) 和部分加密貨幣
+
+---
+
+列出可用OpenSSL可用曲線
+
+```
+openssl ecparam -list_curves
+```
+
+
 
