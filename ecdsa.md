@@ -56,7 +56,30 @@ console.log('Secret2: ', secret4.length, secret4.toString('hex'));
 
 &gt; 以下倆倆為一組，因用A之ecdh與B之public key 算出之結果與用 B之ecdh 與A之public key 相同
 
-![](/assets/4523.png)
+![](/assets/4523.png)原理:
+
+![](/assets/7458.png)
+
+
+
+```
+小明與阿東 兩人協議好要使用 p=23以及 g=5.
+
+小明選擇一個秘密整數a=6, 計算A = (g ** a) % p 然後傳給給阿東。
+A = (5 ** 6) % 23 = 8.
+
+阿東選擇一個秘密整數b=15, 計算B = (g ** b) % p 然後傳給小明。
+B = (5 ** 15) % 23 = 19.
+
+小明計算s = (B ** a) % p
+(19 ** 6) % 23 = 2.
+阿東計算s = (A ** b) % p
+(8 ** 15) % 23 = 2.
+```
+
+
+
+
 
 # ECDSA（The Elliptic Curve Digital Signature Algorithm）
 
