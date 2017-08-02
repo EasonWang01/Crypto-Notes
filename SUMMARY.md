@@ -6,6 +6,6 @@
 * [DSA](dsa.md)
 * [SHA256](sha256.md)
 * [RIPEMD](ripemd.md)
-* [ECDSA](ecdsa.md)
+* [ECDSA & ECDH](ecdsa.md)
 * [Crypto module](browser-crypto.md)
 
