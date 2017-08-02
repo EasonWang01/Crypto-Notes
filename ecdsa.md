@@ -8,6 +8,12 @@
 （3）存儲空間占用小 ECC的密鑰尺寸和系統參數與RSA、DSA相比要小得多， 所以占用的存儲空間小得多。
 ```
 
+```
+ ECDH和ECDSA產生公私鑰的方式都相同
+```
+
+
+
 # ECDH
 
 ECDH可視為ECC + DH \(Diffie-Hellman\)
