@@ -15,5 +15,9 @@ function findPrime(num) {
 }
 ```
 
+# 中國剩餘定理 {#firstHeading}
+
+
+
 
 
