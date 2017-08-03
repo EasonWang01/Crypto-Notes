@@ -13,7 +13,6 @@ function findPrime(num) {
   primes.unshift(2);
   return primes
 }
-
 ```
 
 
