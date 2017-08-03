@@ -12,8 +12,6 @@
  ECDH和ECDSA產生公私鑰的方式都相同
 ```
 
-
-
 # ECDH
 
 用途:
@@ -21,8 +19,6 @@
 ```
 讓兩人不透漏私密訊息的情況下獲得一把共同的密鑰
 ```
-
-
 
 ECDH可視為ECC + DH \(Diffie-Hellman\)
 
@@ -70,7 +66,17 @@ console.log('Secret2: ', secret4.length, secret4.toString('hex'));
 
 &gt; 以下倆倆為一組，因用A之ecdh與B之public key 算出之結果與用 B之ecdh 與A之public key 相同
 
-![](/assets/4523.png)原理:
+![](/assets/4523.png)
+
+
+
+> 但你可能會問兩個人算出共同密鑰可以做什麼?
+
+通常過程是:兩人只要把自己的public key給對方來算出secret key，之後用這把secret去做AES之類加密，即可在不傳遞真正密鑰的情況下只有兩人可以解密
+
+
+
+原理:
 
 ![](/assets/7458.png)
 
