@@ -46,9 +46,17 @@ const N = '100011111000000100011111000000100011111000000100011111000000100011111
 console.log(bigInt(N, 2).toString(16))
 ```
 
---------- 
+---
 
 > 以下為大數轉換原理之實作
+
+可直接使用現成模組 https://github.com/EasonWang01/big-integer-converter
+
+```
+yarn add big-integer-converter
+```
+
+原理:
 
 # 1.二進位轉十進位
 
