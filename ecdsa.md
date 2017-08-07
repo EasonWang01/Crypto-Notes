@@ -12,7 +12,7 @@
  ECDH和ECDSA產生公私鑰的方式都相同
 ```
 
-# ECC
+# ECC \(Elliptic curve cryptography\)
 
 列出可用OpenSSL可用曲線
 
@@ -22,9 +22,13 @@ openssl ecparam -list_curves
 
 以下網站可看到各曲線的Base  Point
 
-https://safecurves.cr.yp.to/base.html
+[https://safecurves.cr.yp.to/base.html](https://safecurves.cr.yp.to/base.html)
 
-# 
+曲線方程式 Ep\(a, b\) 為以下型態:
+
+```
+y**2 = x**3 + ax + b (mod p) 
+```
 
 # ECDH
 
