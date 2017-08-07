@@ -12,13 +12,7 @@
 
 > Big-integer模組只能對十進位計算有效，其他進位也會失去精準度
 
-
-
-
-
 例如以下問題
-
-
 
 ```
 parseInt("10001111111111000001111111111111111111111111111111111111111000000000000111111111111111111111", 2)
@@ -27,10 +21,6 @@ parseInt("1000111111111100000111111111111111111111111111111111111111100000000000
 
 2.7850723016701677e+27
 ```
-
-
-
-
 
 # 1.二進位轉十進位
 
@@ -51,8 +41,6 @@ function bin2dec(str){
     return hex.join('')
 }
 ```
-
-
 
 所以我們改用上面的方法
 
@@ -149,6 +137,49 @@ function hexToDecimal(s) {
         }
     });
     return dec;
+}
+```
+
+
+
+# 3.十進位轉二進位
+
+```js
+function dec2hex(str){   //傳入字串
+    str = str.toString();
+    var dec = str.toString().split(''), sum = [], hex = [], i, s
+    while(dec.length){
+        s = 1 * dec.shift()
+        for(i = 0; s || i < sum.length; i++){
+            s += (sum[i] || 0) * 10
+            sum[i] = s % 16
+            s = (s - sum[i]) / 16
+        }
+    }
+    while(sum.length){
+        hex.push(sum.pop().toString(16))
+    }
+    return hex.join('')
+}
+```
+
+# 十進位轉十六進位
+
+```js
+function dec2bin(str){ 
+    var dec = str.toString().split(''), sum = [], hex = [], i, s
+    while(dec.length){
+        s = 1 * dec.shift()
+        for(i = 0; s || i < sum.length; i++){
+            s += (sum[i] || 0) * 10
+            sum[i] = s % 2
+            s = (s - sum[i]) / 2
+        }
+    }
+    while(sum.length){
+        hex.push(sum.pop().toString(2))
+    }
+    return hex.join('')
 }
 ```
 
