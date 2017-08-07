@@ -1,7 +1,5 @@
 # **大數BigInteger 進位轉換**
 
-
-
 **\(由於JS有MAX\_SAFE\_INTEGER\)所以大數字需要用以下方法轉換進位，python內建BigInteger所以可以直接用int\(\),hex\(\)等直接進行轉換計算**
 
 [https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global\_Objects/Number/MAX\_SAFE\_INTEGER](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
@@ -11,8 +9,6 @@
 **ex:\(36028797018963970\).toString\(16\) 但Python內建BIgInteger 所以出來數字會跟JS不同**
 
 **而JS要解決這個問題要使用函數先將數字分開轉換再合併**
-
-
 
 # 1.二進位大數轉換範例
 
@@ -55,13 +51,7 @@ bin2dec("10001111111111000001111111111111111111111111111111111111111000000000000
 
 
 
-
-
-
-
-
-
-# 2.16進位轉二進位
+# 2.十六進位轉二進位
 
 ```js
 var lookup = {
