@@ -17,7 +17,18 @@ function findPrime(num) {
 
 # 中國剩餘定理 {#firstHeading}
 
+https://www.youtube.com/watch?v=PM2D3xzqH\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7
 
+
+
+由來:也常被稱韓信點兵，一個數除三餘2，除五餘3，除七餘2，求此數?
+
+算法:
+
+```
+1. 先將三和五相乘 = 15，15的倍數30，剛好除七餘2      記下30
+2. 再來將三和七相乘 = 21，21的倍數63，剛好除五餘3
+```
 
 
 
