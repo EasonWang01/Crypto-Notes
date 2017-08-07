@@ -27,7 +27,7 @@ openssl ecparam -list_curves
 曲線方程式 Ep\(a, b\) 為以下型態:
 
 ```
-y**2 = x**3 + ax + b (mod p) 
+y**2 = x**3 + ax + b (mod p)
 ```
 
 # ECDH
