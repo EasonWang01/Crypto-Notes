@@ -102,6 +102,7 @@ var lookup = {
 };
 
 function hexToBinary(s) {
+    if(s.substring(0,2) === '0x') {s = s.replace('0x', '')}
     var ret = '';
     for (var i = 0, len = s.length; i < len; i++) {
         ret += lookup[s[i]];
@@ -139,8 +140,6 @@ function hexToDecimal(s) {
     return dec;
 }
 ```
-
-
 
 # 3.十進位轉二進位
 
