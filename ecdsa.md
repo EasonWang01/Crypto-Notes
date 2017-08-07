@@ -12,6 +12,20 @@
  ECDH和ECDSA產生公私鑰的方式都相同
 ```
 
+# ECC
+
+列出可用OpenSSL可用曲線
+
+```
+openssl ecparam -list_curves
+```
+
+以下網站可看到各曲線的Base  Point
+
+https://safecurves.cr.yp.to/base.html
+
+# 
+
 # ECDH
 
 用途:
@@ -68,13 +82,9 @@ console.log('Secret2: ', secret4.length, secret4.toString('hex'));
 
 ![](/assets/4523.png)
 
-
-
 > 但你可能會問兩個人算出共同密鑰可以做什麼?
 
 通常過程是:兩人只要把自己的public key給對方來算出secret key，之後用這把secret去做AES之類加密，即可在不傳遞真正密鑰的情況下只有兩人可以解密
-
-
 
 原理:
 
@@ -104,12 +114,6 @@ ECDSA也可視為ECC+DSA\(Digital Signature Algorithm\)
 常見用於:[TLS](https://tools.ietf.org/html/rfc4492)   [PGP](https://tools.ietf.org/html/rfc6637)  [SSH](https://tools.ietf.org/html/rfc5656) 和部分加密貨幣
 
 ---
-
-列出可用OpenSSL可用曲線
-
-```
-openssl ecparam -list_curves
-```
 
 
 
