@@ -28,7 +28,7 @@ parseInt("1000111111111100000111111111111111111111111111111111111111100000000000
 
 **而JS要解決這個問題要使用函數先將數字分開轉換再合併**
 
-或是可用npm 上的big-integer模組
+或是可用npm 上的big-integer模組\(數字記得用字串方式傳入\)
 
 ```
 // 記得16進位不用加0x
@@ -50,7 +50,7 @@ console.log(bigInt(N, 2).toString(16))
 
 > 以下為大數轉換原理之實作
 
-可直接使用現成模組 https://github.com/EasonWang01/big-integer-converter
+可直接使用現成模組 [https://github.com/EasonWang01/big-integer-converter](https://github.com/EasonWang01/big-integer-converter)
 
 ```
 yarn add big-integer-converter
