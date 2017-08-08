@@ -196,7 +196,7 @@ var r = require('jsrsasign');
 var ec = new r.ECDSA({ 'curve': 'secp256r1' });
 var keypair = ec.generateKeyPairHex();
 var pubhex = keypair.ecpubhex; // hexadecimal string of EC public key
-var prvhex = keypair.ecprvhex; // hexadecimal string of EC private key (=d)
+var prvhex = keypair.ecprvhex; // hexadecimal string of EC private key
 
 console.log(pubhex)
 console.log(prvhex)
