@@ -121,8 +121,6 @@ ECDSA也可視為ECC+DSA\(Digital Signature Algorithm\)
 
 \(以下範例需使用python2\)
 
-
-
 ```python
 #coding=utf-8
 
@@ -187,6 +185,43 @@ xu1, yu1 = EccMultiply(Gx,Gy,(HashOfThingToSign * w)%N)
 xu2, yu2 = EccMultiply(xPublicKey,yPublicKey,(r*w)%N)
 x,y = ECadd(xu1,yu1,xu2,yu2)
 print r==x; print
+```
+
+
+
+# 另一個範例使用jsrsasign模組
+
+https://www.npmjs.com/package/jsrsasign
+
+
+
+```js
+var r = require('jsrsasign');
+var ec = new r.ECDSA({ 'curve': 'secp256r1' });
+var keypair = ec.generateKeyPairHex();
+var pubhex = keypair.ecpubhex; // hexadecimal string of EC public key
+var prvhex = keypair.ecprvhex; // hexadecimal string of EC private key (=d)
+
+console.log(pubhex)
+console.log(prvhex)
+
+msg1 = 123;
+
+var sig = new r.Signature({ "alg": 'SHA256withECDSA' });
+sig.init({ d: prvhex, curve: 'secp256r1' });
+sig.updateString(msg1);
+var sigValueHex = sig.sign();
+
+var sig = new r.Signature({ "alg": 'SHA256withECDSA' });
+sig.init({ xy: pubhex, curve: 'secp256r1' });
+sig.updateString(msg1);
+var result = sig.verify(sigValueHex);
+if (result) {
+  console.log("valid ECDSA signature");
+} else {
+  console.log("invalid ECDSA signature");
+}
+
 ```
 
 
