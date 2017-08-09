@@ -223,10 +223,7 @@ if (result) {
 
 然後使用 jsrsasign 的Signature函式，並用同樣之secp256k1  curve來進行sign的動作
 
-
-
 ```js
-
 // 使用Node.js的ECDH來產生公鑰與私鑰
 const crypto = require('crypto');
 const bob = crypto.createECDH('secp256k1');
