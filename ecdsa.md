@@ -219,5 +219,40 @@ if (result) {
 }
 ```
 
+```js
+
+
+// 使用Node.js的ECDH來產生公鑰與私鑰
+const crypto = require('crypto');
+const bob = crypto.createECDH('secp256k1');
+bob.generateKeys();
+ prvhex = bob.getPrivateKey().toString('hex')
+ pubhex = bob.getPublicKey().toString('hex')
+console.log(prvhex)
+console.log(pubhex)
+
+msg1 = 123;
+
+
+// 使用jsrsasign 的Signature函式，並用同樣之secp256k1  curve來進行sign的動作
+var r = require('jsrsasign');
+var ec = new r.ECDSA({ 'curve': 'secp256k1' });
+
+var sig = new r.Signature({ "alg": 'SHA256withECDSA' });
+sig.init({ d: prvhex, curve: 'secp256k1' });
+sig.updateString(msg1);
+var sigValueHex = sig.sign();
+
+var sig = new r.Signature({ "alg": 'SHA256withECDSA' });
+sig.init({ xy: pubhex, curve: 'secp256k1' });
+sig.updateString(msg1);
+var result = sig.verify(sigValueHex);
+if (result) {
+  console.log("valid ECDSA signature");
+} else {
+  console.log("invalid ECDSA signature");
+}
+```
+
 
 
