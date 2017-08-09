@@ -219,19 +219,15 @@ if (result) {
 }
 ```
 
-
-
 ### \#或是可使用Node.js的Crypto模組之ECDH來產生相同曲線之公私鑰
 
 然後使用 jsrsasign 的Signature函式，並用同樣之secp256k1  curve來進行sign的動作
 
 
 
-```
-// 使用Node.js的ECDH來產生公鑰與私鑰
-```
-
 ```js
+
+// 使用Node.js的ECDH來產生公鑰與私鑰
 const crypto = require('crypto');
 const bob = crypto.createECDH('secp256k1');
 bob.generateKeys();
