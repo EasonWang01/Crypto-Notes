@@ -2,6 +2,8 @@
 
 對稱式加密，加解密用同一個密碼或密鑰，主要為DES的改進版
 
+# \#Node.js 範例
+
 EX:
 
 ```js
@@ -23,11 +25,7 @@ console.log('---解密後的資訊為---')
 console.log(decrypted);
 ```
 
-
-
-
-
-# 使用openssl加密檔案
+# \#使用openssl加密檔案
 
 ```
 加密
@@ -36,6 +34,15 @@ openssl enc -aes-256-cbc -salt -in file.txt -out file.txt.enc
 解密
 openssl enc -aes-256-cbc -d -in file.txt.enc -out file.txt
 ```
+
+#### 加上密碼
+
+```
+openssl enc -aes-256-cbc -salt -in file.txt -out file.txt.enc -k PASS
+openssl enc -aes-256-cbc -d -in file.txt.enc -out file.txt -k PASS
+```
+
+> https://www.shellhacks.com/encrypt-decrypt-file-password-openssl/
 
 
 
