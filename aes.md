@@ -27,3 +27,15 @@ console.log(decrypted);
 
 
 
+# 使用openssl加密檔案
+
+```
+加密
+openssl enc -aes-256-cbc -salt -in file.txt -out file.txt.enc
+
+解密
+openssl enc -aes-256-cbc -d -in file.txt.enc -out file.txt
+```
+
+
+
