@@ -81,35 +81,29 @@ openssl dgst -dss1 -verify dsa_publickey.pem -signature document.sig document.tx
 
 先參考此文，產生pem
 
-https://adam.merrifield.ca/2012/01/20/generating-dsa-pem-key-pairs/
+[https://adam.merrifield.ca/2012/01/20/generating-dsa-pem-key-pairs/](https://adam.merrifield.ca/2012/01/20/generating-dsa-pem-key-pairs/)
 
 ```js
 var fs = require('fs');
 var crypto = require('crypto');
 var pem = require('pem')
 
-var privateKey = fs.readFileSync('./dsa_priv0.pem'); 	
+var privateKey = fs.readFileSync('./dsa_priv0.pem');     
 var publicKey = fs.readFileSync('./dsa_pub.pem');
 var buffLen = 128;
 
-var buffer = new Buffer(buffLen);
-for (var i = 0; i < buffLen; ++i) {
-    buffer.writeUInt8(97, i);
-}
-
 var sign = crypto.createSign('dsaWithSHA1');
-sign.update(buffer);
+sign.update('apple');
 
 // 注意 這裡是用私鑰 簽名   如果公鑰會出現錯誤
 var res = sign.sign(privateKey, 'hex');
 
 var verify = crypto.createVerify('dsaWithSHA1');
-verify.update(buffer);
+verify.update('apple');
 
 var rst = verify.verify(publicKey, res, "hex");
 
 console.log(rst);  // Prints success. means the key pair works.
-
 ```
 
 
