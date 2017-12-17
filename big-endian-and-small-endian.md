@@ -28,3 +28,7 @@ function BigEndian_to_SmallEndian(hexNum) {
 
 
 
+如果要把Smail 轉為BIg Endian則為同一個程式，把數字再放入跑一次即可轉回
+
+![](/assets/螢幕快照 2017-12-17 下午2.20.56.png)
+
