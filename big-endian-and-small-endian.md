@@ -4,17 +4,15 @@
 Small Endian： 0x78 0x56 0x34 0x12 
 
 
-Big Endian： 0x12 0x34 0x56 0x78 
+Big Endian： 0x12 0x34 0x56 0x78
 ```
-
-
 
 以下為範例程式（BigEndian\_to\_SmallEndian）
 
 ```js
 function BigEndian_to_SmallEndian(hexNum) {
   let SmallEndian_array = [];
-  if (hexNum % 2 !== 0) {
+  if (hexNum.length % 2 !== 0) {
     hexNum = '0' + hexNum // 數字總數為奇數的話 在開頭補0
   }
 
