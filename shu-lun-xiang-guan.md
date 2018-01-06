@@ -60,7 +60,7 @@ e.g. φ(5) = 4 (包含1,2,3,4)
 φ(a) = φ (c x d) = φ(c) x φ(d) 
 
 // 所以假設今天 c 和 d 都是質數，在條件a = c * d下
-則 φ(a) = (c - 1) * (d - 1) ， 因為c為質數下φ(c) = c - 1 
+則 φ(a) = (c - 1) * (d - 1) ， 因為c為質數下φ(c) = c - 1
 ```
 
 > 其公式證明需用到中國剩餘定理
@@ -90,4 +90,15 @@ a ** φ(b) ≡ 1(mod b)
 > 在下圖中第二到第三步驟時的2\*\*12可換為1**8 即是應用了此定理。\(因為2 \*\*** 13 - 1 % 13 = 1\)
 
 ![](/assets/螢幕快照 2018-01-06 上午9.20.00.png)
+
+# 快速取模運算\(fast-modular-exponentiation\)
+
+```
+22 ** 2343 % 233
+// 上式計算耗費資源，所以可以用公式，參考以下網站
+```
+
+https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/fast-modular-exponentiation
+
+
 
