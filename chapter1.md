@@ -141,7 +141,7 @@ openssl rsa -in private.pem -out public.pem -outform PEM -pubout
 3.產生一個稍後用來加密的檔案
 
 ```
-vim test.txt
+echo 'some data' > test.txt
 
 然後檔案內容隨意輸入
 ```
