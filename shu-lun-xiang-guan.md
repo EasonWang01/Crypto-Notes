@@ -98,7 +98,13 @@ a ** φ(b) ≡ 1(mod b)
 // 上式計算耗費資源，所以可以用公式，參考以下網站
 ```
 
-https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/fast-modular-exponentiation
+[https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/fast-modular-exponentiation](https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/fast-modular-exponentiation)
 
+```
+1.將數字進行2的因數分解為二進位：https://tw.answers.yahoo.com/question/index?qid=20100629000010KK07683
+2.然後參考下圖
+3.然後運用5^2 mod 19 = (5^1 * 5^1) mod 19 = (5^1 mod 19 * 5^1 mod 19) mod 19 類似做法去分解成較小的數
+```
 
+![](/assets/85b4660da7c4e4f1e1662686a9771a51b2cf4d08ww.jpg)
 
