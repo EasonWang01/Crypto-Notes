@@ -15,9 +15,7 @@ function findPrime(num) {
 }
 ```
 
-
-
-#  中國剩餘定理 
+# 中國剩餘定理
 
 [https://www.youtube.com/watch?v=PM2D3xzqH\\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7](https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7]%28https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7%29\)
 
@@ -25,19 +23,19 @@ function findPrime(num) {
 
 算法:
 
-\`\`\`
-
-1. 先將三和五相乘 = 15，15的倍數30，剛好除七餘2      記下30
-
-2. 再來將三和七相乘 = 21，21的倍數63，剛好除五餘3     記下63
-
-3. 最後將五和七相乘 = 35，而35剛好除三餘2      記下35
-
-\`\`\`
+```
+1.先將三和五相乘 = 15，15的倍數30，剛好除七餘2      記下30
+2.再來將三和七相乘 = 21，21的倍數63，剛好除五餘3     記下63
+3.最後將五和七相乘 = 35，而35剛好除三餘2           記下35 
+```
 
 最後30+63+35 = 128 即為我們要找的數
 
-\# 費馬小定理
+
+
+
+
+#  費馬小定理
 
 假設有兩數a和b，a為整數，b為質數，且a不是b的倍數，則以下恆成立
 
