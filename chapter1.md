@@ -10,7 +10,7 @@ RSA密鑰一般是1024位或2048位，位指的是二進位數
 這裡假設a,b是23和29
 ```
 
-第二步:計算φ\(axb\)           
+第二步:計算φ\(axb\)
 
 > 歐拉函數φ\(n\)的意思為：小於n並與n互質之數的數量。
 
@@ -118,17 +118,23 @@ let decrypt = final.map(d => {
 console.log(decrypt)
 ```
 
-# 使用OpenSSL之RSA加解密
+# Node.js之RSA加解密
 
-1.產生一個private key
 
-> 預設產生長度為 512 bit  在最後可加數字1024 or 4096 產生不同長度私鑰
+
+# 
+
+# OpenSSL之RSA加解密
+
+1.產生PEM格式的私鑰
+
+> 預設產生長度為 512 bit  在最後可加數字1024 、2048或 4096 產生不同長度私鑰
 
 ```
  openssl genrsa -out private.pem
 ```
 
-2.產生PEM格式的公鑰
+2.從剛才的私鑰來產生對應的PEM格式之公鑰
 
 ```
 openssl rsa -in private.pem -out public.pem -outform PEM -pubout
