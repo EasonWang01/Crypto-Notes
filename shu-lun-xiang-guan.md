@@ -1,52 +1,31 @@
-#  找出質數
+# 找出質數
 
+> 原理:不斷加2，然後把前面找到的質數也除看看\\(因為質數不會與其前面任何質數相除為0\\)，最後再把2放到開頭
 
-
-&gt; 原理:不斷加2，然後把前面找到的質數也除看看\\(因為質數不會與其前面任何質數相除為0\\)，最後再把2放到開頭
-
-
-
-\`\`\`
-
-function findPrime\(num\) {
-
-  var primes = \[\];
-
-  for \(let n = 3; n &lt;= num; n += 2\) {
-
-    if \(primes.every\(function \(prime\) { return n % prime != 0 }\)\) {
-
-      primes.push\(n\);
-
+```js
+function findPrime(num) {
+  var primes = [];
+  for (let n = 3; n <= num; n += 2) {
+    if (primes.every(function (prime) { return n % prime != 0 })) {
+      primes.push(n);
     }
-
   }
-
-  primes.unshift\(2\);
-
+  primes.unshift(2);
   return primes
-
 }
+```
+
+
 
 \`\`\`
-
-
 
 \# 中國剩餘定理 {\#firstHeading}
 
-
-
-\[https://www.youtube.com/watch?v=PM2D3xzqH\\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7\]\(https://www.youtube.com/watch?v=PM2D3xzqH\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7\)
-
-
+\[[https://www.youtube.com/watch?v=PM2D3xzqH\\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7\]\(https://www.youtube.com/watch?v=PM2D3xzqH\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7\](https://www.youtube.com/watch?v=PM2D3xzqH\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7]%28https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7\)\)
 
 由來:也常被稱韓信點兵，一個數除三餘2，除五餘3，除七餘2，求此數?
 
-
-
 算法:
-
-
 
 \`\`\`
 
@@ -58,31 +37,15 @@ function findPrime\(num\) {
 
 \`\`\`
 
-
-
 最後30+63+35 = 128 即為我們要找的數
-
-
 
 \# 費馬小定理
 
-
-
 假設有兩數a和b，a為整數，b為質數，且a不是b的倍數，則以下恆成立
-
-
 
 \`\`\`
 
 a\*\*p-1 % p === 1
 
 \`\`\`
-
-
-
-
-
-
-
-
 
