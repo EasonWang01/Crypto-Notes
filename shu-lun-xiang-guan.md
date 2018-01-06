@@ -29,6 +29,8 @@ a x b ≡ 1 (mod n)
 
 b即為a之模反元素
 
+> 假設a 為 3 以及n 為 11 則算出b 為 4
+
 # 中國剩餘定理
 
 [https://www.youtube.com/watch?v=PM2D3xzqH\\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7](https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7]%28https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7%29\)
