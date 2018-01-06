@@ -15,6 +15,18 @@ function findPrime(num) {
 }
 ```
 
+# 模反元素
+
+```
+a x b 除與 n 餘數等於1
+
+等同於下式
+
+a x b ≡ 1 (mod n)
+```
+
+找出b即為解答
+
 # 中國剩餘定理
 
 [https://www.youtube.com/watch?v=PM2D3xzqH\\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7](https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7]%28https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7%29\)
