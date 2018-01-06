@@ -42,7 +42,7 @@ openssl enc -aes-256-cbc -salt -in file.txt -out file.txt.enc -k PASS
 openssl enc -aes-256-cbc -d -in file.txt.enc -out file.txt -k PASS
 ```
 
-> https://www.shellhacks.com/encrypt-decrypt-file-password-openssl/
+> [https://www.shellhacks.com/encrypt-decrypt-file-password-openssl/](https://www.shellhacks.com/encrypt-decrypt-file-password-openssl/)
 
 
 
