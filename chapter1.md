@@ -178,25 +178,29 @@ cat decrypt.txt
  openssl genrsa -out private.pem
 ```
 
-2. 從剛才的私鑰來產生對應的PEM格式之公鑰
+1.從剛才的私鑰來產生對應的PEM格式之公鑰
 
 ```
 openssl rsa -in private.pem -out public.pem -outform PEM -pubout
 ```
 
-3. 簽名
+2.簽名
 
 ```
-openssl rsautl -sign -inkey private.pem -in test.txt -out sign.rsa
+echo -n "hello" | openssl dgst -RSA-SHA256 -sign private.pem > signed_message
 ```
 
-4. 驗證
+3.驗證
 
 ```
-openssl rsautl -verify -inkey public.pem -in sign.rsa -pubin
+echo -n "hello" | openssl dgst -RSA-SHA256 -verify public.pem -signature signed_message
 ```
 
+成功會回傳
 
+> ```
+> Verified OK 
+> ```
 
 其他知識
 
