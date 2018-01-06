@@ -199,8 +199,21 @@ echo -n "hello" | openssl dgst -RSA-SHA256 -verify public.pem -signature signed_
 成功會回傳
 
 > ```
-> Verified OK 
+> Verified OK
 > ```
+
+Node.js驗證
+
+```js
+var fs = require('fs');
+var crypto = require('crypto');
+
+var verify = crypto.createVerify('RSA-SHA256');
+verify.update('hello');
+var res = verify.verify(fs.readFileSync('./public.pem'),
+                        fs.readFileSync('./signed_message'));
+console.log(res);
+```
 
 其他知識
 
