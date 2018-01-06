@@ -215,6 +215,30 @@ var res = verify.verify(fs.readFileSync('./public.pem'),
 console.log(res);
 ```
 
+> 上面程式為在OpenSSL用私鑰簽名後給Node.js驗證
+
+下面程式為全部使用Node.js簽名與驗證
+
+```js
+const crypto = require('crypto');
+const fs = require('fs');
+var private_key = fs.readFileSync('./private.pem')
+var public_key = fs.readFileSync('./public.pem')
+private_key = private_key.toString();
+public_key = public_key.toString();
+
+const sign = crypto.createSign('RSA-SHA256');
+sign.update('test');
+signature = sign.sign(private_key, 'hex');
+
+const verify = crypto.createVerify('RSA-SHA256');
+verify.update('test');
+output = verify.verify(public_key, signature, 'hex');
+console.log(output)
+```
+
+
+
 其他知識
 
 ```
