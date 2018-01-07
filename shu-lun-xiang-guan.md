@@ -108,9 +108,11 @@ a ** φ(b) ≡ 1(mod b)
 
 ![](/assets/85b4660da7c4e4f1e1662686a9771a51b2cf4d08ww.jpg)
 
+> 另見： Exponentiation by squaring
+>
+> https://www.youtube.com/watch?v=qed48E92qXc
+
 ## 大步小步算法
 
 $$a^x ≡ b (mod p)$$假設今天是給定a,b,p要求x ，則可用大步小步算法
-
-
 
