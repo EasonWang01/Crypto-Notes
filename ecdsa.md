@@ -1,4 +1,4 @@
-# 
+# ECDSA & ECDH
 
 有三個類似名詞為**ECC、ECDH、ECDSA，第一個是**Elliptic Curve Cryptography的縮寫，而後面兩個都是基於ECC的加密演算法
 
@@ -11,8 +11,6 @@
 ```
  ECDH和ECDSA產生公私鑰的方式都相同
 ```
-
-
 
 橢圓曲線公式類似如下
 
