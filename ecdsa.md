@@ -12,8 +12,6 @@
  ECDH和ECDSA產生公私鑰的方式都相同
 ```
 
-
-
 橢圓曲線公式類似如下
 
 # ![](/assets/1_K0I9-X9-uJ87PIyjjeJg1Q.png)相等於![](/assets/1_NXwBblAUpjHIyuIF0gHzKg.png)
@@ -144,7 +142,7 @@ ECDSA也可視為ECC+DSA\(Digital Signature Algorithm\)
 ```python
 #coding=utf-8
 
-Pcurve = 2**256 - 2**32 - 2**9 - 2**8 - 2**7 - 2**6 - 2**4 -1 # The proven prime
+Pcurve = 2**256 - 2**32 - 2**9 - 2**8 - 2**7 - 2**6 - 2**4 -1 # The proven prime 
 N=0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141 # Number of points in the field
 Acurve = 0; Bcurve = 7 # This defines the curve. y^2 = x^3 + Acurve * x + Bcurve
 Gx = 55066263022277343669578718895168534326250603453777594175500187360389116729240
@@ -280,7 +278,7 @@ if (result) {
 
 為比特幣私鑰產生公鑰時所使用的曲線
 
-算出來後期結構可分為02或04 後面接上 x 在接上 y
+算出來後其結構可分為02或04 後面接上 x 在接上 y
 
 02開頭為compress\(只有x座標前面接上02因為有了x就可以代數進去方程式求得y，可以減少字串長度\)
 
