@@ -92,10 +92,10 @@ var secret2 = ecdh2.computeSecret(publicKey);
 console.log('Secret2: ', secret2.length, secret2.toString('hex'));
 
 var secret3 = ecdh3.computeSecret(publicKey4);
-console.log('Secret2: ', secret3.length, secret3.toString('hex'));
+console.log('Secret3: ', secret3.length, secret3.toString('hex'));
 
 var secret4 = ecdh4.computeSecret(publicKey3);
-console.log('Secret2: ', secret4.length, secret4.toString('hex'));
+console.log('Secret4: ', secret4.length, secret4.toString('hex'));
 ```
 
 結果如下:
@@ -246,8 +246,8 @@ if (result) {
 const crypto = require('crypto');
 const bob = crypto.createECDH('secp256k1');
 bob.generateKeys();
- prvhex = bob.getPrivateKey().toString('hex')
- pubhex = bob.getPublicKey().toString('hex')
+prvhex = bob.getPrivateKey().toString('hex')
+pubhex = bob.getPublicKey().toString('hex')
 console.log(prvhex)
 console.log(pubhex)
 
