@@ -102,3 +102,17 @@ openssl enc -d -aes-256-cbc -in file.enc
 > ```
 > openssl list-cipher-commands
 > ```
+
+### 產生 RSA Public key 與 Private Key
+
+先產生 2040 bits 的私鑰
+
+```
+openssl genrsa -out mykey.pem 2048
+```
+
+從私鑰再產生公鑰
+
+```
+openssl rsa -in mykey.pem -pubout
+```
