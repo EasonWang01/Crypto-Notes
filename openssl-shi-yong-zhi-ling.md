@@ -116,3 +116,13 @@ openssl genrsa -out mykey.pem 2048
 ```
 openssl rsa -in mykey.pem -pubout
 ```
+
+## 參考資料
+
+{% embed url="https://www.openssl.org/docs/manmaster/man1/" %}
+
+{% embed url="https://www.madboa.com/geek/openssl/" %}
+
+{% embed url="https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs" %}
+
+{% embed url="https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.htm" %}
