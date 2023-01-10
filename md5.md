@@ -1,10 +1,19 @@
 ---
-description: Hash 的一種方式，不可逆，但目前已有算法破解
+description: Hash 的一種方式，不可逆，但目前已有算法破解，目前大多用在產生一個獨特可用來比較的雜湊
 ---
 
 # MD5
 
-原理：
+### 使用 OpenSSL 產生檔案內容的 MD5 雜湊
+
+> 如果檔案內容更改，會產生不同雜湊 (digest)
+
+```
+openssl dgst -md5 test.js  
+MD5(test.js)= ef361a3afed6b86202340752744cc85c
+```
+
+### 原理：
 
 ```javascript
 //Note: All variables are unsigned 32 bits and wrap modulo 2^32 when calculating
