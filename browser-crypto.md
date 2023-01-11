@@ -1,26 +1,28 @@
-# \# Argon2
+# Crypto module
+
+## # Argon2
 
 [https://github.com/ranisalt/node-argon2](https://github.com/ranisalt/node-argon2)
 
-# \# Bcrypt
+## # Bcrypt
 
 [https://github.com/kelektiv/node.bcrypt.js](https://github.com/kelektiv/node.bcrypt.js)
 
-# \#[sjcl](https://github.com/bitwiseshiftleft/sjcl/tree/3668e639bc78e910815f501d55458e968845edc2) \(By standford\)
+## #[sjcl](https://github.com/bitwiseshiftleft/sjcl/tree/3668e639bc78e910815f501d55458e968845edc2) (By standford)
 
 [https://github.com/bitwiseshiftleft/sjcl/tree/3668e639bc78e910815f501d55458e968845edc2](https://github.com/bitwiseshiftleft/sjcl/tree/3668e639bc78e910815f501d55458e968845edc2)
 
-# \#[**Web Crypto API**](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)
+## #[**Web Crypto API**](https://developer.mozilla.org/en-US/docs/Web/API/Web\_Crypto\_API)
 
-[https://www.w3.org/TR/WebCryptoAPI/\#crypto-interface](https://www.w3.org/TR/WebCryptoAPI/#crypto-interface)
+[https://www.w3.org/TR/WebCryptoAPI/#crypto-interface](https://www.w3.org/TR/WebCryptoAPI/#crypto-interface)
 
 [https://developer.mozilla.org/en-US/docs/Web/API/Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Crypto)
 
-EX:  sha256 \(from MDN\)
+EX: sha256 (from MDN)
 
 > [https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest)
 
-```js
+```javascript
 async function sha256(message) {
     const msgBuffer = new TextEncoder('utf-8').encode(message);                     // encode as UTF-8
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);            // hash the message
@@ -35,6 +37,3 @@ sha256('abc').then(hash => console.log(hash));
     const hash = await sha256('abc');
 }());
 ```
-
-
-

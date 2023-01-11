@@ -1,5 +1,7 @@
 # ECDSA & ECDH
 
+## ECDSA & ECDH
+
 有三個類似名詞為**ECC、ECDH、ECDSA，第一個是**Elliptic Curve Cryptography的縮寫，而後面兩個都是基於ECC的加密演算法
 
 ```
@@ -14,11 +16,11 @@
 
 橢圓曲線公式類似如下
 
-# ![](/assets/1_K0I9-X9-uJ87PIyjjeJg1Q.png)相等於![](/assets/1_NXwBblAUpjHIyuIF0gHzKg.png)
+## ![](assets/1\_K0I9-X9-uJ87PIyjjeJg1Q.png)相等於![](assets/1\_NXwBblAUpjHIyuIF0gHzKg.png)
 
 其中 p 是 2²⁵⁶-2³²-2⁹-2⁸-2⁷-2⁶-2⁴-1，是一個很大的質數
 
-例如以下範例座標 \(x, y\) 就是這曲線中的一點
+例如以下範例座標 (x, y) 就是這曲線中的一點
 
 ```
 p = 2**256 - 2**32 - 2**9 - 2**8 - 2**7 - 2**6 - 2**4 - 1
@@ -28,9 +30,7 @@ y = 3267051002075881697808308513050704318447127338065924327593890433575733748242
 0
 ```
 
-# 
-
-# ECC \(Elliptic curve cryptography\)
+## ECC (Elliptic curve cryptography)
 
 列出可用OpenSSL可用曲線
 
@@ -38,17 +38,17 @@ y = 3267051002075881697808308513050704318447127338065924327593890433575733748242
 openssl ecparam -list_curves
 ```
 
-以下網站可看到各曲線的Base  Point
+以下網站可看到各曲線的Base Point
 
 [https://safecurves.cr.yp.to/base.html](https://safecurves.cr.yp.to/base.html)
 
-曲線方程式 Ep\(a, b\) 為以下型態:
+曲線方程式 Ep(a, b) 為以下型態:
 
 ```
 y**2 = x**3 + ax + b (mod p)
 ```
 
-# ECDH
+## ECDH
 
 用途:
 
@@ -56,11 +56,11 @@ y**2 = x**3 + ax + b (mod p)
 讓兩人不透漏私密訊息的情況下獲得一把共同的密鑰
 ```
 
-ECDH可視為ECC + DH \(Diffie-Hellman\)
+ECDH可視為ECC + DH (Diffie-Hellman)
 
 Ex:
 
-```js
+```javascript
 var crypto = require('crypto');
 
 // 1.
@@ -100,9 +100,9 @@ console.log('Secret4: ', secret4.length, secret4.toString('hex'));
 
 結果如下:
 
-&gt; 以下倆倆為一組，因用A之ecdh與B之public key 算出之結果與用 B之ecdh 與A之public key 相同
+\> 以下倆倆為一組，因用A之ecdh與B之public key 算出之結果與用 B之ecdh 與A之public key 相同
 
-![](/assets/4523.png)
+![](assets/4523.png)
 
 > 但你可能會問兩個人算出共同密鑰可以做什麼?
 
@@ -110,7 +110,7 @@ console.log('Secret4: ', secret4.length, secret4.toString('hex'));
 
 原理:
 
-![](/assets/7458.png)
+![](assets/7458.png)
 
 ```
 小明與阿東 兩人協議好要使用 p=23以及 g=5.
@@ -127,17 +127,15 @@ B = (5 ** 15) % 23 = 19.
 (8 ** 15) % 23 = 2.
 ```
 
-# ECDSA（The Elliptic Curve Digital Signature Algorithm）
+## ECDSA（The Elliptic Curve Digital Signature Algorithm）
 
-ECDSA也可視為ECC+DSA\(Digital Signature Algorithm\)
+ECDSA也可視為ECC+DSA(Digital Signature Algorithm)
 
 視覺化網站:[https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html](https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html)
 
-常見用於:[TLS](https://tools.ietf.org/html/rfc4492)   [PGP](https://tools.ietf.org/html/rfc6637)  [SSH](https://tools.ietf.org/html/rfc5656) 和部分加密貨幣
+常見用於:[TLS](https://tools.ietf.org/html/rfc4492) [PGP](https://tools.ietf.org/html/rfc6637) [SSH](https://tools.ietf.org/html/rfc5656) 和部分加密貨幣
 
----
-
-\(以下範例需使用python2\)
+(以下範例需使用python2)
 
 ```python
 #coding=utf-8
@@ -205,11 +203,11 @@ x,y = ECadd(xu1,yu1,xu2,yu2)
 print r==x; print
 ```
 
-# 另一個範例使用jsrsasign模組
+## 另一個範例使用jsrsasign模組
 
 [https://www.npmjs.com/package/jsrsasign](https://www.npmjs.com/package/jsrsasign)
 
-```js
+```javascript
 var r = require('jsrsasign');
 var ec = new r.ECDSA({ 'curve': 'secp256r1' });
 var keypair = ec.generateKeyPairHex();
@@ -237,11 +235,11 @@ if (result) {
 }
 ```
 
-### \#或是可使用Node.js的Crypto模組之ECDH來產生相同曲線之公私鑰
+### #或是可使用Node.js的Crypto模組之ECDH來產生相同曲線之公私鑰
 
-然後使用 jsrsasign 的Signature函式，並用同樣之secp256k1  curve來進行sign的動作
+然後使用 jsrsasign 的Signature函式，並用同樣之secp256k1 curve來進行sign的動作
 
-```js
+```javascript
 // 使用Node.js的ECDH來產生公鑰與私鑰
 const crypto = require('crypto');
 const bob = crypto.createECDH('secp256k1');
@@ -280,11 +278,10 @@ if (result) {
 
 算出來後其結構可分為02或04 後面接上 x 在接上 y
 
-02開頭為compress\(只有x座標前面接上02因為有了x就可以代數進去方程式求得y，可以減少字串長度\)
+02開頭為compress(只有x座標前面接上02因為有了x就可以代數進去方程式求得y，可以減少字串長度)
 
 [http://www.secg.org/sec2-v2.pdf](http://www.secg.org/sec2-v2.pdf)
 
-&gt;![](/assets/09.png)
+\>![](assets/09.png)
 
-![](/assets/97.png)
-
+![](assets/97.png)

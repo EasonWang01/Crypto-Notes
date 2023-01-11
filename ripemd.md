@@ -1,35 +1,35 @@
-## RIPEMD \(\_RACE Integrity Primitives Evaluation \_Message Digest\)
+# RIPEMD
 
 以下主要講解RIPEMD-160
 
-# 步驟1:
+## 步驟1:
 
-#### \# 先定義公式:
+#### # 先定義公式:
 
-![](/assets/45.png)
+![](assets/45.png)
 
-![](/assets/5.png)
+![](assets/5.png)
 
-#### \# 然後加上hash時會用到的constant
+#### # 然後加上hash時會用到的constant
 
 #### 1.
 
-![](/assets/258.png)
+![](assets/258.png)
 
-```js
+```javascript
 var hl = [0x00000000, 0x5a827999, 0x6ed9eba1, 0x8f1bbcdc, 0xa953fd4e]
 var hr = [0x50a28be6, 0x5c4dd124, 0x6d703ef3, 0x7a6d76e9, 0x00000000]
 ```
 
-> Ex:  對照上圖最右側公式     \(2\*\*30 \* \(Math.sqrt\(2\)\)\).toString\(16\)       回傳    "5a827999.fcef34"
+> Ex: 對照上圖最右側公式 (2\*\*30 \* (Math.sqrt(2))).toString(16) 回傳 "5a827999.fcef34"
 
 #### 2.
 
-![](/assets/9784.png)
+![](assets/9784.png)
 
 寫成JS
 
-```js
+```javascript
 var zl = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
   7, 4, 13, 1, 10, 6, 15, 3, 12, 0, 9, 5, 2, 14, 11, 8,
@@ -49,9 +49,9 @@ var zr = [
 
 #### 3.
 
-![](/assets/9444.png)
+![](assets/9444.png)
 
-```js
+```javascript
 var sl = [
   11, 14, 15, 12, 5, 8, 7, 9, 11, 13, 14, 15, 6, 7, 9, 8,
   7, 6, 8, 13, 11, 9, 7, 15, 7, 12, 15, 9, 11, 7, 13, 12,
@@ -71,19 +71,17 @@ var sr = [
 
 ### 最後一個
 
-![](/assets/asdf.png)
+![](assets/asdf.png)
 
-### 
-
-### \# 看完上面這些constant可能會有點模糊，不知道他們是用來做什麼的
+### # 看完上面這些constant可能會有點模糊，不知道他們是用來做什麼的
 
 ### 所以我們直接來看整個hash過程的pseudo-code
 
-![](/assets/548.png)
+![](assets/548.png)
 
 然後寫成JS
 
-```js
+```javascript
 function rotl (x, n) {
   return (x << n) | (x >>> (32 - n))
 }
@@ -144,7 +142,7 @@ for (var i = 0; i < 80; i += 1) {
 
 最後，把一開始的constant的每個數值加上新hash過的數字更新然後串接起來
 
-```js
+```javascript
   let t = (this._b + cl + dr) | 0
   this._b = (this._c + dl + er) | 0
   this._c = (this._d + el + ar) | 0
@@ -163,11 +161,9 @@ for (var i = 0; i < 80; i += 1) {
 
 #### --------------------------------------------------------------------------------------------------------------------
 
-#### 
+#### # Full Code
 
-#### \# Full Code
-
-```js
+```javascript
 'use strict'
 
 var util = require('util');
@@ -385,6 +381,3 @@ function fn5 (a, b, c, d, e, m, k, s) {
 
 console.log(new RIPEMD160().update('abc').digest('hex'))
 ```
-
-
-

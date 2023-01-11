@@ -1,8 +1,10 @@
-# 找出質數
+# 數論相關
+
+## 找出質數
 
 > 原理:不斷加2，然後把前面找到的質數也除看看\\(因為質數不會與其前面任何質數相除為0\\)，最後再把2放到開頭
 
-```js
+```javascript
 function findPrime(num) {
   var primes = [];
   for (let n = 3; n <= num; n += 2) {
@@ -15,7 +17,7 @@ function findPrime(num) {
 }
 ```
 
-# 模反元素
+## 模反元素
 
 > 整數 a 對模數 n 之模反元素b存在的充分必要條件是 a 和 n 互質
 
@@ -31,9 +33,9 @@ b即為a之模反元素
 
 > 假設a 為 3 以及n 為 11 則算出b 為 4
 
-# 中國剩餘定理
+## 中國剩餘定理
 
-[https://www.youtube.com/watch?v=PM2D3xzqH\\_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7](https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7]%28https://www.youtube.com/watch?v=PM2D3xzqH_E&t=327s&list=LLeiE2pix0r2Mn7Xm4zi3WYg&index=7%29\)
+[https://www.youtube.com/watch?v=PM2D3xzqH\\\_E\&t=327s\&list=LLeiE2pix0r2Mn7Xm4zi3WYg\&index=7](https://www.youtube.com/watch?v=PM2D3xzqH\_E\&t=327s\&list=LLeiE2pix0r2Mn7Xm4zi3WYg\&index=7]%28https://www.youtube.com/watch?v=PM2D3xzqH\_E\&t=327s\&list=LLeiE2pix0r2Mn7Xm4zi3WYg\&index=7%29\\)
 
 由來:也常被稱韓信點兵，一個數除三餘2，除五餘3，除七餘2，求此數?
 
@@ -47,14 +49,14 @@ b即為a之模反元素
 
 最後30+63+35 = 128 即為我們要找的數
 
-# 歐拉函數
+## 歐拉函數
 
 ```
 φ(a) 意思為小於a的所有數與a構成互質關係的個數
 e.g. φ(5) = 4 (包含1,2,3,4)
 ```
 
-而如果a可以被因式分解找出兩個數則φ\(a\)也等於如下
+而如果a可以被因式分解找出兩個數則φ(a)也等於如下
 
 ```
 φ(a) = φ (c x d) = φ(c) x φ(d) 
@@ -65,7 +67,7 @@ e.g. φ(5) = 4 (包含1,2,3,4)
 
 > 其公式證明需用到中國剩餘定理
 
-# 歐拉定理
+## 歐拉定理
 
 假設有兩數a和b，且兩數互質
 
@@ -73,11 +75,11 @@ e.g. φ(5) = 4 (包含1,2,3,4)
 a ** φ(b) ≡ 1(mod b)
 ```
 
-# 費馬小定理
+## 費馬小定理
 
 今天如果歐拉定理中的b是質數則其變為費馬小定理
 
-> 因為b為質數，所以小於他並與它互質的數之數量為b - 1\(因為小於質數的數都與他互值，所以φ\(b\)可以替換為 b - 1\)
+> 因為b為質數，所以小於他並與它互質的數之數量為b - 1(因為小於質數的數都與他互值，所以φ(b)可以替換為 b - 1)
 
 假設有兩數a和b，a為整數，b為質數，且a不是b的倍數，則以下恆成立
 
@@ -87,11 +89,11 @@ a ** φ(b) ≡ 1(mod b)
 
 應用如下：
 
-> 在下圖中第二到第三步驟時的2\*\*12可換為1**8 即是應用了此定理。\(因為2 \*\*** 13 - 1 % 13 = 1\)
+> 在下圖中第二到第三步驟時的2\*\*12可換為1**8 即是應用了此定理。(因為2 \*\*** 13 - 1 % 13 = 1)
 
-![](/assets/螢幕快照 2018-01-06 上午9.20.00.png)
+![](<assets/螢幕快照 2018-01-06 上午9.20.00.png>)
 
-# 快速取模運算\(fast-modular-exponentiation\)
+## 快速取模運算(fast-modular-exponentiation)
 
 ```
 22 ** 2343 % 233
@@ -106,13 +108,12 @@ a ** φ(b) ≡ 1(mod b)
 3.然後運用5^2 mod 19 = (5^1 * 5^1) mod 19 = (5^1 mod 19 * 5^1 mod 19) mod 19 類似做法去分解成較小的數
 ```
 
-![](/assets/85b4660da7c4e4f1e1662686a9771a51b2cf4d08ww.jpg)
+![](assets/85b4660da7c4e4f1e1662686a9771a51b2cf4d08ww.jpg)
 
 > 另見： Exponentiation by squaring
 >
-> https://www.youtube.com/watch?v=qed48E92qXc
+> [https://www.youtube.com/watch?v=qed48E92qXc](https://www.youtube.com/watch?v=qed48E92qXc)
 
-## 大步小步算法
+### 大步小步算法
 
 $$a^x ≡ b (mod p)$$假設今天是給定a,b,p要求x ，則可用大步小步算法
-
