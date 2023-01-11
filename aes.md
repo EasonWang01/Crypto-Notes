@@ -128,6 +128,19 @@ console.log(encrypt("test"));
 console.log(decrypt(encrypt("test")))
 ```
 
+## IV 與 AuthTag
+
+<pre><code><strong>IV and the auth tag can be sent in plain.
+</strong>
+The auth tag is a tag the recipient can use to verify that the message has not been altered. This is important because AES-GCM acts as a stream cipher and anyone could flip bits.
+
+The IV is not a secret, the only thing to be concerned about is that it must not be reused with the same key.
+</code></pre>
+
+{% embed url="https://security.stackexchange.com/a/252039" %}
+
+{% embed url="https://crypto.stackexchange.com/a/101575" %}
+
 ## 使用openssl加密檔案
 
 ```
