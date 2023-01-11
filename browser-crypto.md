@@ -1,26 +1,28 @@
 # Crypto module
 
-## # Argon2
+## Argon2
 
 [https://github.com/ranisalt/node-argon2](https://github.com/ranisalt/node-argon2)
 
-## # Bcrypt
+## Bcrypt
 
 [https://github.com/kelektiv/node.bcrypt.js](https://github.com/kelektiv/node.bcrypt.js)
 
-## #[sjcl](https://github.com/bitwiseshiftleft/sjcl/tree/3668e639bc78e910815f501d55458e968845edc2) (By standford)
+## sjcl (By standford)
 
 [https://github.com/bitwiseshiftleft/sjcl/tree/3668e639bc78e910815f501d55458e968845edc2](https://github.com/bitwiseshiftleft/sjcl/tree/3668e639bc78e910815f501d55458e968845edc2)
 
-## #[**Web Crypto API**](https://developer.mozilla.org/en-US/docs/Web/API/Web\_Crypto\_API)
+## PyCrypto (python crypto module)
+
+[https://pycryptodome.readthedocs.io/en/latest/src/introduction.html](https://pycryptodome.readthedocs.io/en/latest/src/introduction.html)
+
+## **Web Crypto API**
 
 [https://www.w3.org/TR/WebCryptoAPI/#crypto-interface](https://www.w3.org/TR/WebCryptoAPI/#crypto-interface)
 
 [https://developer.mozilla.org/en-US/docs/Web/API/Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Crypto)
 
-EX: sha256 (from MDN)
-
-> [https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest)
+[https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest)
 
 ```javascript
 async function sha256(message) {
