@@ -37,7 +37,7 @@ openssl gendsa
 openssl dsaparam -out dsa_param.pem 1024
 ```
 
-![](assets/dsa01.png)
+![](.gitbook/assets/dsa01.png)
 
 2.從剛才的參數檔案產生一個private key 並且用AES-128之password protect 也可用aes-192或aes-256
 
@@ -45,7 +45,7 @@ openssl dsaparam -out dsa_param.pem 1024
 openssl gendsa -out dsa_privatekey.pem -aes128 dsa_param.pem
 ```
 
-![](assets/dsa02.png)
+![](.gitbook/assets/dsa02.png)
 
 > PS:unable to write ''random state" 可參考此
 >
@@ -77,7 +77,7 @@ openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt
 openssl dgst -dss1 -verify dsa_publickey.pem -signature document.sig document.txt
 ```
 
-![](assets/dsa04.png)
+![](.gitbook/assets/dsa04.png)
 
 ### #使用Node.js
 

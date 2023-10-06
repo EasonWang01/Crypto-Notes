@@ -6,15 +6,15 @@
 
 #### # 先定義公式:
 
-![](assets/45.png)
+![](.gitbook/assets/45.png)
 
-![](assets/5.png)
+![](.gitbook/assets/5.png)
 
 #### # 然後加上hash時會用到的constant
 
 #### 1.
 
-![](assets/258.png)
+![](.gitbook/assets/258.png)
 
 ```javascript
 var hl = [0x00000000, 0x5a827999, 0x6ed9eba1, 0x8f1bbcdc, 0xa953fd4e]
@@ -25,7 +25,7 @@ var hr = [0x50a28be6, 0x5c4dd124, 0x6d703ef3, 0x7a6d76e9, 0x00000000]
 
 #### 2.
 
-![](assets/9784.png)
+![](.gitbook/assets/9784.png)
 
 寫成JS
 
@@ -49,7 +49,7 @@ var zr = [
 
 #### 3.
 
-![](assets/9444.png)
+![](.gitbook/assets/9444.png)
 
 ```javascript
 var sl = [
@@ -71,13 +71,13 @@ var sr = [
 
 ### 最後一個
 
-![](assets/asdf.png)
+![](.gitbook/assets/asdf.png)
 
 ### # 看完上面這些constant可能會有點模糊，不知道他們是用來做什麼的
 
 ### 所以我們直接來看整個hash過程的pseudo-code
 
-![](assets/548.png)
+![](.gitbook/assets/548.png)
 
 然後寫成JS
 

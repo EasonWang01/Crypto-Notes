@@ -91,7 +91,7 @@ a ** φ(b) ≡ 1(mod b)
 
 > 在下圖中第二到第三步驟時的2\*\*12可換為1**8 即是應用了此定理。(因為2 \*\*** 13 - 1 % 13 = 1)
 
-![](<assets/螢幕快照 2018-01-06 上午9.20.00.png>)
+![](<.gitbook/assets/螢幕快照 2018-01-06 上午9.20.00.png>)
 
 ## 快速取模運算(fast-modular-exponentiation)
 
@@ -108,7 +108,7 @@ a ** φ(b) ≡ 1(mod b)
 3.然後運用5^2 mod 19 = (5^1 * 5^1) mod 19 = (5^1 mod 19 * 5^1 mod 19) mod 19 類似做法去分解成較小的數
 ```
 
-![](assets/85b4660da7c4e4f1e1662686a9771a51b2cf4d08ww.jpg)
+![](.gitbook/assets/85b4660da7c4e4f1e1662686a9771a51b2cf4d08ww.jpg)
 
 > 另見： Exponentiation by squaring
 >

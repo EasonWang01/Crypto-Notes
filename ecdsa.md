@@ -16,7 +16,7 @@
 
 橢圓曲線公式類似如下
 
-## ![](assets/1\_K0I9-X9-uJ87PIyjjeJg1Q.png)相等於![](assets/1\_NXwBblAUpjHIyuIF0gHzKg.png)
+## ![](.gitbook/assets/1\_K0I9-X9-uJ87PIyjjeJg1Q.png)相等於![](.gitbook/assets/1\_NXwBblAUpjHIyuIF0gHzKg.png)
 
 其中 p 是 2²⁵⁶-2³²-2⁹-2⁸-2⁷-2⁶-2⁴-1，是一個很大的質數
 
@@ -102,7 +102,7 @@ console.log('Secret4: ', secret4.length, secret4.toString('hex'));
 
 \> 以下倆倆為一組，因用A之ecdh與B之public key 算出之結果與用 B之ecdh 與A之public key 相同
 
-![](assets/4523.png)
+![](.gitbook/assets/4523.png)
 
 > 但你可能會問兩個人算出共同密鑰可以做什麼?
 
@@ -110,7 +110,7 @@ console.log('Secret4: ', secret4.length, secret4.toString('hex'));
 
 原理:
 
-![](assets/7458.png)
+![](.gitbook/assets/7458.png)
 
 ```
 小明與阿東 兩人協議好要使用 p=23以及 g=5.
@@ -282,6 +282,6 @@ if (result) {
 
 [http://www.secg.org/sec2-v2.pdf](http://www.secg.org/sec2-v2.pdf)
 
-\>![](assets/09.png)
+\>![](.gitbook/assets/09.png)
 
-![](assets/97.png)
+![](.gitbook/assets/97.png)
